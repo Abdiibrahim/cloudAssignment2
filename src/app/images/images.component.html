@@ -1,0 +1,6 @@
+<h3>Images</h3>
+
+<div class="container" *ngFor="let image of images">
+  <img class="img-fluid" [src]="image" style="height:auto; width: 750px;">
+  <button class="btn btn-primary" [routerLink]="['/imageDetail', image]">View Details</button>
+</div>

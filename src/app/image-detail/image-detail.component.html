@@ -1,0 +1,45 @@
+<img [src]="imageURL" style="height:auto; width: 750px;">
+<div class="list-group">
+  <div class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Captions</h5>
+    </div>
+    <p class="mb-1" *ngFor="let cap of imageDetails?.description.captions">{{ cap.text }}</p>
+  </div>
+
+  <div class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Faces</h5>
+    </div>
+    <p class="mb-1" *ngFor="let face of imageDetails?.faces">{{ face?.gender }}, {{ face?.age }}</p>
+  </div>
+
+  <div class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Description</h5>
+    </div>
+    <div class="row">
+      <p class="mb-1" *ngFor="let desc of imageDetails?.description.tags">{{ desc }}/</p>
+    </div>
+  </div>
+
+  <div class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Tags</h5>
+    </div>
+    <div class="row">
+      <p class="mb-1" *ngFor="let tag of imageDetails?.tags">{{ tag?.name }}/</p>
+    </div>
+  </div>
+
+  <div class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Metadata</h5>
+    </div>
+    <p class="mb-1">Format: {{ imageDetails?.metadata.format }}</p>
+    <p class="mb-1">Width: {{ imageDetails?.metadata.width }}px</p>
+    <p class="mb-1">Height: {{ imageDetails?.metadata.height }}px</p>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="sendSMS(imageDetails)">Send Details as SMS</button>

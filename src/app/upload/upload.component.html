@@ -1,0 +1,4 @@
+<h3>Select an image to upload</h3>
+
+<input type="file" (change)="fileSelected($event)">
+<button class="btn btn-primary" (click)="upload()" [disabled]="isFileSelected == false">Upload</button>
